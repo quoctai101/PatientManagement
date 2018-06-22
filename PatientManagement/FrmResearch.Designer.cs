@@ -157,6 +157,7 @@
             this.Controls.Add(this.rbAddress);
             this.Controls.Add(this.rbRecord);
             this.Controls.Add(this.rbName);
+            this.MaximizeBox = false;
             this.Name = "FrmResearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Research for patient";

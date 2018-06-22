@@ -42,7 +42,7 @@ namespace PatientManagement
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             FileDialog file = new OpenFileDialog();
-            file.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+            file.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF";
             file.ShowDialog(); // show dialog
             if(!String.IsNullOrEmpty(file.FileName))
                 pbAvatar.ImageLocation = file.FileName;
@@ -52,6 +52,5 @@ namespace PatientManagement
         {
             txtRecord.Text = (currentPatientNum + 1).ToString();
         }
-
     }
 }

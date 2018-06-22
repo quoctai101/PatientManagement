@@ -62,6 +62,12 @@ namespace PatientManagement
         {
             int currentRecord = Convert.ToInt32(txtRecord.Text);
             changeProfile(currentRecord);
+            bool isFirst = currentRecord == 1 ? true : false;
+            bool isLast = currentRecord == lstPatients.Count ? true : false;
+            btnPrevious.Enabled = !isFirst;
+            btnFirst.Enabled = !isFirst;
+            btnLast.Enabled = !isLast;
+            btnNext.Enabled = !isLast;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -180,6 +186,11 @@ namespace PatientManagement
         private void researchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnResearch_Click(sender, e);
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
