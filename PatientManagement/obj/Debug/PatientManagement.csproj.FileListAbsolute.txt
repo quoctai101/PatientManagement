@@ -1,0 +1,13 @@
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\bin\Debug\PatientManagement.exe.config
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\bin\Debug\PatientManagement.exe
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\bin\Debug\PatientManagement.pdb
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.csprojAssemblyReference.cache
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.FrmPatientManager.resources
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.Properties.Resources.resources
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.csproj.GenerateResource.cache
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.csproj.CoreCompileInputs.cache
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.exe
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.pdb
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.FrmAdd.resources
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.FrmUpdate.resources
+C:\Users\quoct\source\repos\PatientManagement\PatientManagement\obj\Debug\PatientManagement.FrmResearch.resources
