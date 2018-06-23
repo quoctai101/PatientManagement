@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmResearch));
             this.rbName = new System.Windows.Forms.RadioButton();
             this.rbRecord = new System.Windows.Forms.RadioButton();
             this.rbAddress = new System.Windows.Forms.RadioButton();
@@ -157,6 +158,8 @@
             this.Controls.Add(this.rbAddress);
             this.Controls.Add(this.rbRecord);
             this.Controls.Add(this.rbName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmResearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

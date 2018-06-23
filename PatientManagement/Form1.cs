@@ -157,7 +157,9 @@ namespace PatientManagement
                 MessageBox.Show("Not found!");
             }
         }
-
+        //
+        //Tool Strip and Menu
+        //
         private void toolbtnAdd_Click(object sender, EventArgs e)
         {
             btnAdd_Click(sender, e);
