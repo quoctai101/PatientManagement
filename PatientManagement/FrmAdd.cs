@@ -13,9 +13,14 @@ namespace PatientManagement
 {
     public partial class FrmAdd : Form
     {
+        //Delegate + event for sending data
         public delegate void SendData(Patient patient);
         public event SendData send;
+        //Property to pass parameter
         public int currentPatientNum { get; set; }
+        //
+        //Events
+        //
         public FrmAdd()
         {
             InitializeComponent();
@@ -28,8 +33,8 @@ namespace PatientManagement
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtAddress.Text) || String.IsNullOrEmpty(txtTelephone.Text))
-                MessageBox.Show("Please fill all blanks");
+            if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtAddress.Text) || String.IsNullOrEmpty(txtTelephone.Text) || String.IsNullOrEmpty(pbAvatar.ImageLocation))
+                MessageBox.Show("Please fill all blanks and browse picture");
             else
             {
                 File.Copy(pbAvatar.ImageLocation, System.Environment.CurrentDirectory +"/Data/Pictures/" + txtRecord.Text + Path.GetExtension(pbAvatar.ImageLocation),true);
@@ -50,6 +55,7 @@ namespace PatientManagement
 
         private void FrmAdd_Load(object sender, EventArgs e)
         {
+            dtpDOB.MaxDate = DateTime.Now.Date;
             txtRecord.Text = (currentPatientNum + 1).ToString();
         }
     }

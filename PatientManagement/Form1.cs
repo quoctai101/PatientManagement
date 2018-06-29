@@ -54,6 +54,12 @@ namespace PatientManagement
             txtDOB.Text = currentPatient.DOB.Date.ToString("dd/MM/yyyy");
             txtRecord.Text = currentPatient.Record.ToString();
             pbAvatar.ImageLocation = currentPatient.Picture;
+            bool isFirst = Record == 1 ? true : false;
+            bool isLast = Record == lstPatients.Count ? true : false;
+            btnPrevious.Enabled = !isFirst;
+            btnFirst.Enabled = !isFirst;
+            btnLast.Enabled = !isLast;
+            btnNext.Enabled = !isLast;
         }
         //
         //Events
@@ -62,12 +68,6 @@ namespace PatientManagement
         {
             int currentRecord = Convert.ToInt32(txtRecord.Text);
             changeProfile(currentRecord);
-            bool isFirst = currentRecord == 1 ? true : false;
-            bool isLast = currentRecord == lstPatients.Count ? true : false;
-            btnPrevious.Enabled = !isFirst;
-            btnFirst.Enabled = !isFirst;
-            btnLast.Enabled = !isLast;
-            btnNext.Enabled = !isLast;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -100,6 +100,8 @@ namespace PatientManagement
             frmAdd.currentPatientNum = lstPatients.Count;
             frmAdd.send += FrmAdd_send;
             frmAdd.ShowDialog();
+            int currentRecord = Convert.ToInt32(txtRecord.Text);
+            changeProfile(currentRecord);
         }
         private void FrmAdd_send(Patient patient)
         {
@@ -114,8 +116,6 @@ namespace PatientManagement
             frmUpdate.currentRecord = Convert.ToInt32(txtRecord.Text);
             frmUpdate.ShowDialog();
             int currentRecord = Convert.ToInt32(txtRecord.Text);
-            if (currentRecord > 1 && currentRecord < lstPatients.Count) changeProfile(currentRecord - 1);
-            else changeProfile(2);
             changeProfile(currentRecord);
             saveData();
         }

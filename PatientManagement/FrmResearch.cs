@@ -12,9 +12,9 @@ namespace PatientManagement
 {
     public partial class FrmResearch : Form
     {
+        //Delegate + event to send patient for research
         public delegate void SendData(string dataType,DateTime DOB,string value);
         public event SendData send;
-        public bool isFound { get; set; }
         public FrmResearch()
         {
             InitializeComponent();
@@ -52,24 +52,20 @@ namespace PatientManagement
                     MessageBox.Show("Invalid Record!");
                     return;
                 }
-            }         
-            this.isFound = false;
+            }
             string checkedButton = this.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             switch (checkedButton)
             {
                 case "Date of birth":
+                    //Just send DOB and ignore txtValue
                     send("Date of birth", dtpDOB.Value, null);
                     break;
                 default:
+                    //Just send txtValue with type of Value and ignore DOB by sending null
                     send(checkedButton, new DateTime() , txtValue.Text);
                     break;
             }
             this.Close();
-        }
-
-        private void FrmResearch_Load(object sender, EventArgs e)
-        {
-            this.isFound = false;
         }
     }
 }

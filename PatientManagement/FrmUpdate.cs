@@ -13,6 +13,7 @@ namespace PatientManagement
 {
     public partial class FrmUpdate : Form
     {
+        //Public property for passing parameters
         public List<Patient> Patients { get; set; }
         public int currentRecord { get; set; }
         public FrmUpdate()
@@ -21,6 +22,7 @@ namespace PatientManagement
         }
         private void FrmUpdate_Load(object sender, EventArgs e)
         {
+            dtpDOB.MaxDate = DateTime.Now.Date;
             changeProfile(currentRecord);
         }
         //
@@ -60,6 +62,12 @@ namespace PatientManagement
             dtpDOB.Value = currentPatient.DOB;
             txtRecord.Text = currentPatient.Record.ToString();
             pbAvatar.ImageLocation = currentPatient.Picture;
+            bool isFirst = Record == 1 ? true : false;
+            bool isLast = Record == Patients.Count ? true : false;
+            btnPrevious.Enabled = !isFirst;
+            btnFirst.Enabled = !isFirst;
+            btnLast.Enabled = !isLast;
+            btnNext.Enabled = !isLast;
         }
         private void confirmSave(object sender, EventArgs e)
         {
@@ -76,12 +84,6 @@ namespace PatientManagement
         {
             int currentRecord = Convert.ToInt32(txtRecord.Text);
             changeProfile(currentRecord);
-            bool isFirst = currentRecord == 1 ? true : false;
-            bool isLast = currentRecord == Patients.Count ? true : false;
-            btnPrevious.Enabled = !isFirst;
-            btnFirst.Enabled = !isFirst;
-            btnLast.Enabled = !isLast;
-            btnNext.Enabled = !isLast;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
